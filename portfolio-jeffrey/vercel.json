@@ -24,5 +24,10 @@
     "CACHE_DRIVER": "array",
     "LOG_CHANNEL": "stderr",
     "SESSION_DRIVER": "cookie"
+  },
+  "build": {
+    "env": {
+      "NODE_VERSION": "18"
+    }
   }
 }
