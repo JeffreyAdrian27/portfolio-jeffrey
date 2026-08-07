@@ -34,7 +34,7 @@ RUN composer install --no-dev --optimize-autoloader
 RUN npm ci
 
 # Build aset Vite/Tailwind
-RUN npm run build
+RUN NODE_OPTIONS="--max-old-space-size=512" npm run build
 
 # Setup Apache document root to point to Laravel's public directory
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
