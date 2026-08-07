@@ -30,8 +30,11 @@ COPY . /var/www/html
 # Install PHP dependencies using Composer
 RUN composer install --no-dev --optimize-autoloader
 
-# Install Node dependencies and build Vite assets
-RUN npm install && npm run build
+# Install Node modules secara terisolasi
+RUN npm ci
+
+# Build aset Vite/Tailwind
+RUN npm run build
 
 # Setup Apache document root to point to Laravel's public directory
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
