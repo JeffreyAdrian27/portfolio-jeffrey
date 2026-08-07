@@ -1,6 +1,6 @@
 FROM php:8.2-apache
 
-# Install system dependencies & Composer & Node.js
+# Install system dependencies & Composer
 RUN apt-get update && apt-get install -y \
     git \
     curl \
@@ -8,9 +8,7 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     zip \
-    unzip \
-    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
-    && apt-get install -y nodejs
+    unzip
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -29,12 +27,6 @@ COPY . /var/www/html
 
 # Install PHP dependencies using Composer
 RUN composer install --no-dev --optimize-autoloader
-
-# Install Node modules secara terisolasi
-RUN npm ci
-
-# Build aset Vite/Tailwind
-RUN NODE_OPTIONS="--max-old-space-size=512" npm run build
 
 # Setup Apache document root to point to Laravel's public directory
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
