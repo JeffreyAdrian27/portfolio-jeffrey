@@ -1,9 +1,90 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="id" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - {{ $profileData['name'] }}</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Primary Meta SEO Tags -->
+    <title>Jeffrey Adrian - Portofolio &amp; Software Developer</title>
+    <meta name="title" content="Jeffrey Adrian - Portofolio &amp; Software Developer">
+    <meta name="description" content="Portofolio resmi Jeffrey Adrian, S.Kom - Software Developer &amp; Full-Stack Engineer spesialis Laravel, React Native, Node.js, Python Data Analytics, dan pembuatan aplikasi web modern.">
+    <meta name="keywords" content="Jeffrey Adrian, Portofolio Jeffrey Adrian, Portfolio Jeffrey Adrian, Jeffrey Adrian Developer, Jeffrey Adrian S.Kom, Software Developer Jeffrey Adrian, Web Developer Surabaya, Full-Stack Developer, React Native Developer, Laravel Developer, Portofolio Web, Portfolio Developer">
+    <meta name="author" content="Jeffrey Adrian">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="Portofolio Jeffrey Adrian - Software Developer &amp; Full-Stack">
+    <meta property="og:description" content="Portofolio resmi Jeffrey Adrian, S.Kom - Software Developer &amp; Full-Stack Engineer. Jelajahi karya proyek web/mobile, sertifikat, dan keahlian teknis.">
+    <meta property="og:image" content="{{ asset('images/foto jeffrey.jpg') }}">
+    <meta property="og:site_name" content="Portofolio Jeffrey Adrian">
+    <meta property="og:locale" content="id_ID">
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="Portofolio Jeffrey Adrian - Software Developer">
+    <meta name="twitter:description" content="Portofolio resmi Jeffrey Adrian, S.Kom - Software Developer &amp; Full-Stack Engineer.">
+    <meta name="twitter:image" content="{{ asset('images/foto jeffrey.jpg') }}">
+
+    <!-- Schema.org JSON-LD Structured Data for Search Engines -->
+    @php
+        $schemaData = [
+            '@context' => 'https://schema.org',
+            '@graph' => [
+                [
+                    '@type' => 'Person',
+                    '@id' => url()->current() . '#person',
+                    'name' => 'Jeffrey Adrian',
+                    'alternateName' => ['Jeffrey', 'Jeffrey Adrian, S.Kom', 'JeffreyAdrian27'],
+                    'givenName' => 'Jeffrey',
+                    'familyName' => 'Adrian',
+                    'jobTitle' => 'Software Developer',
+                    'description' => 'Passionate Software Developer dedicated to designing and building modern web and mobile applications.',
+                    'image' => asset('images/foto jeffrey.jpg'),
+                    'url' => url()->current(),
+                    'sameAs' => [
+                        $profileData['contact']['github_url'],
+                        $profileData['contact']['linkedin_url'],
+                        $profileData['contact']['instagram_url']
+                    ],
+                    'alumniOf' => [
+                        '@type' => 'EducationalOrganization',
+                        'name' => 'Universitas Ciputra Surabaya'
+                    ],
+                    'knowsAbout' => [
+                        'React Native',
+                        'Laravel',
+                        'Node.js',
+                        'Python Data Analytics',
+                        'Tailwind CSS',
+                        'Software Engineering',
+                        'Full-Stack Web Development'
+                    ]
+                ],
+                [
+                    '@type' => 'WebSite',
+                    '@id' => url()->current() . '#website',
+                    'url' => url()->current(),
+                    'name' => 'Portofolio Jeffrey Adrian',
+                    'alternateName' => ['Portfolio Jeffrey Adrian', 'Website Jeffrey Adrian'],
+                    'description' => 'Portofolio resmi Jeffrey Adrian - Software Developer & Full-Stack Engineer',
+                    'author' => [
+                        '@id' => url()->current() . '#person'
+                    ],
+                    'inLanguage' => 'id-ID'
+                ]
+            ]
+        ];
+    @endphp
+    <script type="application/ld+json">
+        {!! json_encode($schemaData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+    </script>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         /* Smooth transitions */
@@ -238,38 +319,38 @@
             id="mobileMenu" 
             class="lg:hidden mt-2.5 w-full rounded-2xl bg-white/95 dark:bg-[#1a1b22]/95 border border-zinc-200/90 dark:border-white/10 shadow-2xl backdrop-blur-2xl overflow-hidden transition-all duration-300 ease-out origin-top opacity-0 scale-95 pointer-events-none max-h-0"
         >
-            <div class="p-3 flex flex-col gap-1 text-xs sm:text-sm font-semibold tracking-wider">
-                <a href="#home" data-target="home" class="mobile-nav-item flex items-center justify-between px-4 py-2.5 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 transition-all cursor-pointer">
+            <div class="p-3.5 pb-4 flex flex-col gap-1.5 text-sm font-semibold tracking-wide">
+                <a href="#home" data-target="home" class="mobile-nav-item flex items-center justify-between px-4 py-3 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 transition-all cursor-pointer">
                     <span>Home</span>
-                    <span class="text-teal-400 font-mono text-[10px]">01</span>
+                    <span class="text-teal-400 font-mono text-[11px] font-bold">01</span>
                 </a>
-                <a href="#about" data-target="about" class="mobile-nav-item flex items-center justify-between px-4 py-2.5 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 transition-all cursor-pointer">
+                <a href="#about" data-target="about" class="mobile-nav-item flex items-center justify-between px-4 py-3 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 transition-all cursor-pointer">
                     <span>About</span>
-                    <span class="text-teal-400 font-mono text-[10px]">02</span>
+                    <span class="text-teal-400 font-mono text-[11px] font-bold">02</span>
                 </a>
-                <a href="#skills" data-target="skills" class="mobile-nav-item flex items-center justify-between px-4 py-2.5 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 transition-all cursor-pointer">
+                <a href="#skills" data-target="skills" class="mobile-nav-item flex items-center justify-between px-4 py-3 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 transition-all cursor-pointer">
                     <span>Skills</span>
-                    <span class="text-teal-400 font-mono text-[10px]">03</span>
+                    <span class="text-teal-400 font-mono text-[11px] font-bold">03</span>
                 </a>
-                <a href="#experience" data-target="experience" class="mobile-nav-item flex items-center justify-between px-4 py-2.5 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 transition-all cursor-pointer">
+                <a href="#experience" data-target="experience" class="mobile-nav-item flex items-center justify-between px-4 py-3 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 transition-all cursor-pointer">
                     <span>Experience</span>
-                    <span class="text-teal-400 font-mono text-[10px]">04</span>
+                    <span class="text-teal-400 font-mono text-[11px] font-bold">04</span>
                 </a>
-                <a href="#education" data-target="education" class="mobile-nav-item flex items-center justify-between px-4 py-2.5 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 transition-all cursor-pointer">
+                <a href="#education" data-target="education" class="mobile-nav-item flex items-center justify-between px-4 py-3 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 transition-all cursor-pointer">
                     <span>Education</span>
-                    <span class="text-teal-400 font-mono text-[10px]">05</span>
+                    <span class="text-teal-400 font-mono text-[11px] font-bold">05</span>
                 </a>
-                <a href="#certificates" data-target="certificates" class="mobile-nav-item flex items-center justify-between px-4 py-2.5 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 transition-all cursor-pointer">
+                <a href="#certificates" data-target="certificates" class="mobile-nav-item flex items-center justify-between px-4 py-3 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 transition-all cursor-pointer">
                     <span>Certificates</span>
-                    <span class="text-teal-400 font-mono text-[10px]">06</span>
+                    <span class="text-teal-400 font-mono text-[11px] font-bold">06</span>
                 </a>
-                <a href="#projects" data-target="projects" class="mobile-nav-item flex items-center justify-between px-4 py-2.5 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 transition-all cursor-pointer">
+                <a href="#projects" data-target="projects" class="mobile-nav-item flex items-center justify-between px-4 py-3 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 transition-all cursor-pointer">
                     <span>Portfolio</span>
-                    <span class="text-teal-400 font-mono text-[10px]">07</span>
+                    <span class="text-teal-400 font-mono text-[11px] font-bold">07</span>
                 </a>
-                <a href="#contact" data-target="contact" class="mobile-nav-item flex items-center justify-between px-4 py-2.5 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/5 transition-all cursor-pointer">
-                    <span>Contact</span>
-                    <span class="text-teal-400 font-mono text-[10px]">08</span>
+                <a href="#contact" data-target="contact" class="mobile-nav-item flex items-center justify-between px-4 py-3.5 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-300 font-bold border border-teal-500/30 hover:bg-teal-500 hover:text-white dark:hover:bg-teal-500 dark:hover:text-zinc-950 transition-all cursor-pointer shadow-sm mt-1">
+                    <span class="text-sm sm:text-base font-bold">Contact</span>
+                    <span class="px-2.5 py-1 rounded-md bg-teal-500/20 text-teal-600 dark:text-teal-300 font-mono text-xs font-bold">08</span>
                 </a>
             </div>
         </div>
@@ -1844,7 +1925,7 @@
         function openMobileMenu() {
             isMobileMenuOpen = true;
             mobileMenu.classList.remove('opacity-0', 'scale-95', 'pointer-events-none', 'max-h-0');
-            mobileMenu.classList.add('opacity-100', 'scale-100', 'pointer-events-auto', 'max-h-80');
+            mobileMenu.classList.add('opacity-100', 'scale-100', 'pointer-events-auto', 'max-h-[600px]');
             hamburgerBtn.setAttribute('aria-expanded', 'true');
 
             // Animasi transisi 3 baris ke simbol 'X'
@@ -1857,7 +1938,7 @@
         function closeMobileMenu() {
             isMobileMenuOpen = false;
             mobileMenu.classList.add('opacity-0', 'scale-95', 'pointer-events-none', 'max-h-0');
-            mobileMenu.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto', 'max-h-80');
+            mobileMenu.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto', 'max-h-[600px]');
             hamburgerBtn.setAttribute('aria-expanded', 'false');
 
             // Reset simbol 'X' kembali ke 3 baris normal
@@ -2270,7 +2351,7 @@
         }
 
         function getCertItemsPerView() {
-            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 768) return 3;
             if (window.innerWidth >= 640) return 2;
             return 1;
         }
@@ -2409,24 +2490,27 @@
         const totalOriginalProjects = originalProjectCards.length;
 
         if (projectTrack && totalOriginalProjects > 0) {
-            originalProjectCards.forEach((card, idx) => {
-                const clone = card.cloneNode(true);
-                clone.setAttribute('data-clone', 'true');
-                // Ensure click handlers inside clone target original index
-                const previewArea = clone.querySelector('[onclick*="openProjectModal"]');
-                if (previewArea) {
-                    previewArea.setAttribute('onclick', `openProjectModal(${idx})`);
-                }
-                const btn = clone.querySelector('button[onclick*="openProjectModal"]');
-                if (btn) {
-                    btn.setAttribute('onclick', `openProjectModal(${idx})`);
-                }
-                projectTrack.appendChild(clone);
-            });
+            // Clone cards twice to guarantee seamless infinite loop
+            for (let c = 0; c < 2; c++) {
+                originalProjectCards.forEach((card, idx) => {
+                    const clone = card.cloneNode(true);
+                    clone.setAttribute('data-clone', 'true');
+                    // Ensure click handlers inside clone target original index
+                    const previewArea = clone.querySelector('[onclick*="openProjectModal"]');
+                    if (previewArea) {
+                        previewArea.setAttribute('onclick', `openProjectModal(${idx})`);
+                    }
+                    const btn = clone.querySelector('button[onclick*="openProjectModal"]');
+                    if (btn) {
+                        btn.setAttribute('onclick', `openProjectModal(${idx})`);
+                    }
+                    projectTrack.appendChild(clone);
+                });
+            }
         }
 
         function getProjectItemsPerView() {
-            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 768) return 3;
             if (window.innerWidth >= 640) return 2;
             return 1;
         }
@@ -2511,7 +2595,7 @@
             if (totalOriginalProjects <= 1) return;
             projectAutoplayInterval = setInterval(() => {
                 slideNextProject();
-            }, 3500);
+            }, 2800);
         }
 
         function stopProjectAutoplay() {
@@ -2521,9 +2605,21 @@
             }
         }
 
+        let projectHoverTimeout = null;
         if (projectSliderWrapper) {
-            projectSliderWrapper.addEventListener('mouseenter', stopProjectAutoplay);
-            projectSliderWrapper.addEventListener('mouseleave', startProjectAutoplay);
+            projectSliderWrapper.addEventListener('mouseenter', () => {
+                stopProjectAutoplay();
+                clearTimeout(projectHoverTimeout);
+                // Otomatis lanjut geser setelah jeda 2.5 detik meskipun mouse masih di area
+                projectHoverTimeout = setTimeout(() => {
+                    startProjectAutoplay();
+                }, 2500);
+            });
+
+            projectSliderWrapper.addEventListener('mouseleave', () => {
+                clearTimeout(projectHoverTimeout);
+                startProjectAutoplay();
+            });
 
             let touchStartX = 0;
             projectSliderWrapper.addEventListener('touchstart', (e) => {
@@ -2549,6 +2645,17 @@
             updateProjectSlider(false);
             startProjectAutoplay();
         }
+
+        // Pastikan autoplay berjalan saat tab aktif
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stopProjectAutoplay();
+                stopCertAutoplay();
+            } else {
+                startProjectAutoplay();
+                startCertAutoplay();
+            }
+        });
 
         // ==========================================
         // 8. BACK TO TOP FLOATING BUTTON LOGIC

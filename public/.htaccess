@@ -5,6 +5,22 @@
 
     RewriteEngine On
 
+    # =========================================================
+    # ANTI-DORKING & SENSITIVE FILE PROTECTION
+    # =========================================================
+
+    # Block access to hidden dot-files and folders (.git, .env, etc.)
+    RewriteRule (^\.|/\.) - [F]
+
+    # Block access to sensitive file extensions (logs, dumps, backups)
+    RewriteCond %{REQUEST_URI} \.(sql|bak|backup|old|log|ini|conf|cfg|sh|bash|json|lock|yaml|yml|env)$ [NC]
+    RewriteCond %{REQUEST_URI} !^/build/manifest\.json$
+    RewriteRule .* - [F,L]
+
+    # Block common recon probes & exploit dorking patterns
+    RewriteCond %{REQUEST_URI} (wp-admin|wp-login|phpmyadmin|pma|cgi-bin|server-status|xmlrpc\.php) [NC]
+    RewriteRule .* - [F,L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -22,4 +38,15 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+</IfModule>
+
+# =========================================================
+# SECURITY HEADERS
+# =========================================================
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
