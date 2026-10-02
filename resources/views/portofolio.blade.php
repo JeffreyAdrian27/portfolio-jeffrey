@@ -21,7 +21,7 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="Portofolio Jeffrey Adrian - Software Developer &amp; Full-Stack">
     <meta property="og:description" content="Portofolio resmi Jeffrey Adrian, S.Kom - Software Developer &amp; Full-Stack Engineer. Jelajahi karya proyek web/mobile, sertifikat, dan keahlian teknis.">
-    <meta property="og:image" content="{{ asset('images/foto jeffrey.jpg') }}">
+    <meta property="og:image" content="{{ asset('images/profile_jeffrey_adrian.jpg') }}">
     <meta property="og:site_name" content="Portofolio Jeffrey Adrian">
     <meta property="og:locale" content="id_ID">
 
@@ -30,7 +30,7 @@
     <meta name="twitter:url" content="{{ url()->current() }}">
     <meta name="twitter:title" content="Portofolio Jeffrey Adrian - Software Developer">
     <meta name="twitter:description" content="Portofolio resmi Jeffrey Adrian, S.Kom - Software Developer &amp; Full-Stack Engineer.">
-    <meta name="twitter:image" content="{{ asset('images/foto jeffrey.jpg') }}">
+    <meta name="twitter:image" content="{{ asset('images/profile_jeffrey_adrian.jpg') }}">
 
     <!-- Schema.org JSON-LD Structured Data for Search Engines -->
     @php
@@ -46,7 +46,7 @@
                     'familyName' => 'Adrian',
                     'jobTitle' => 'Software Developer',
                     'description' => 'Passionate Software Developer dedicated to designing and building modern web and mobile applications.',
-                    'image' => asset('images/foto jeffrey.jpg'),
+                    'image' => asset('images/profile_jeffrey_adrian.jpg'),
                     'url' => url()->current(),
                     'sameAs' => [
                         $profileData['contact']['github_url'],
@@ -399,7 +399,7 @@
 
             <div class="flex justify-center md:justify-end">
                 <div class="home-photo-frame shrink-0 rounded-full bg-zinc-200 dark:bg-[#1d1e26] border-2 border-white dark:border-white/15 overflow-hidden shadow-2xl relative transition-all duration-500">
-                    <img src="{{ asset('images/foto_profile.jpg') }}" alt="Foto Profile" class="w-full h-full object-cover">
+                    <img src="{{ asset('images/profile_jeffrey_adrian.jpg') }}" alt="Foto Profile" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
@@ -434,7 +434,7 @@
                     <!-- FOTO -->
                     <div style="width: 300px; height: 300px;" class="rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/10 shadow-xl">
                         <img
-                            src="{{ asset('images/foto_profile.jpg') }}"
+                            src="{{ asset('images/profile_jeffrey_adrian.jpg') }}"
                             alt="About Me Photo"
                             class="w-full h-full object-cover object-center"
                         >
