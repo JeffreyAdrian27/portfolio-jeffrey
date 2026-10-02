@@ -49,4 +49,9 @@
     Header set X-XSS-Protection "1; mode=block"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
     Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+    # Prevent Google & Search Engines from indexing or saving images
+    <FilesMatch "\.(jpe?g|png|gif|webp|svg|pdf)$">
+        Header set X-Robots-Tag "noindex, noimageindex, nofollow"
+    </FilesMatch>
 </IfModule>

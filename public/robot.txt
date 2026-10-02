@@ -1,0 +1,90 @@
+# ==========================================
+# Robots.txt - Jeffrey Adrian Portfolio
+# Anti-Dorking Protection & SEO Directives
+# ==========================================
+
+User-agent: *
+Allow: /
+Allow: /build/assets/
+Allow: /favicon.ico
+
+# [Anti-Dorking] Block access to private and uploaded media folders
+Disallow: /images/
+Disallow: /storage/
+
+# [Anti-Dorking] Block common sensitive endpoints and admin recon probes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /administrator/
+Disallow: /login/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /phpmyadmin/
+Disallow: /pma/
+Disallow: /mysql/
+Disallow: /server-status/
+Disallow: /server-info/
+Disallow: /cgi-bin/
+
+# [Anti-Dorking] Block configuration, backups, source control & package manifests
+Disallow: /.git/
+Disallow: /.env
+Disallow: /.env.*
+Disallow: /.svn/
+Disallow: /.vscode/
+Disallow: /.idea/
+Disallow: /vendor/
+Disallow: /node_modules/
+Disallow: /composer.json
+Disallow: /composer.lock
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /build/manifest.json
+
+# [Anti-Dorking] Block sensitive file extensions frequently targeted by Google Dorks
+Disallow: /*.sql$
+Disallow: /*.bak$
+Disallow: /*.backup$
+Disallow: /*.old$
+Disallow: /*.log$
+Disallow: /*.ini$
+Disallow: /*.conf$
+Disallow: /*.cfg$
+Disallow: /*.sh$
+Disallow: /*.bash$
+Disallow: /*.zip$
+Disallow: /*.tar$
+Disallow: /*.gz$
+Disallow: /*.7z$
+Disallow: /*.rar$
+Disallow: /*.json$
+Disallow: /*.lock$
+Disallow: /*.yaml$
+Disallow: /*.yml$
+Disallow: /*.env$
+
+# [Anti-Dorking] Block aggressive / malicious vulnerability scrapers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+# [Anti-Image-Save & Anti-Image-Dorking] Block Google Image bot from scraping/indexing images
+User-agent: Googlebot-Image
+Disallow: /
+
+# Standard Crawl-delay
+Crawl-delay: 2
+
+# Sitemap Reference for SEO
+Sitemap: /sitemap.xml

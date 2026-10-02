@@ -79,6 +79,10 @@ Disallow: /
 User-agent: PetalBot
 Disallow: /
 
+# [Anti-Image-Save & Anti-Image-Dorking] Block Google Image bot from scraping/indexing images
+User-agent: Googlebot-Image
+Disallow: /
+
 # Standard Crawl-delay
 Crawl-delay: 2
 

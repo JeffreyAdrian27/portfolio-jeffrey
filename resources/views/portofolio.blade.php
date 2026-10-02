@@ -11,8 +11,9 @@
     <meta name="description" content="Portofolio resmi Jeffrey Adrian, S.Kom - Software Developer &amp; Full-Stack Engineer spesialis Laravel, React Native, Node.js, Python Data Analytics, dan pembuatan aplikasi web modern.">
     <meta name="keywords" content="Jeffrey Adrian, Portofolio Jeffrey Adrian, Portfolio Jeffrey Adrian, Jeffrey Adrian Developer, Jeffrey Adrian S.Kom, Software Developer Jeffrey Adrian, Web Developer Surabaya, Full-Stack Developer, React Native Developer, Laravel Developer, Portofolio Web, Portfolio Developer">
     <meta name="author" content="Jeffrey Adrian">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="robots" content="index, follow, max-snippet:-1, noimageindex, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, noimageindex, max-video-preview:-1">
+    <meta name="googlebot-image" content="noindex, nofollow, noimageindex">
     <link rel="canonical" href="{{ url()->current() }}">
 
     <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
@@ -90,6 +91,20 @@
         /* Smooth transitions */
         body {
             transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        /* Anti-Save / Anti-Download Image Protection */
+        img {
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
+            -webkit-touch-callout: none;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         }
 
         @media (min-width: 1001px) {
@@ -2685,6 +2700,23 @@
         window.addEventListener('scroll', checkBackToTopVisibility, { passive: true });
         window.addEventListener('resize', checkBackToTopVisibility);
         checkBackToTopVisibility();
+
+        // ==========================================
+        // 9. ANTI-SAVE / RIGHT-CLICK & DRAG PROTECTION FOR IMAGES
+        // ==========================================
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG' || e.target.closest('img')) {
+                e.preventDefault();
+                return false;
+            }
+        }, false);
+
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG' || e.target.closest('img')) {
+                e.preventDefault();
+                return false;
+            }
+        }, false);
     </script>
 </body>
 </html>
