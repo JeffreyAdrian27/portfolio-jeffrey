@@ -399,7 +399,7 @@
 
             <div class="flex justify-center md:justify-end">
                 <div class="home-photo-frame shrink-0 rounded-full bg-zinc-200 dark:bg-[#1d1e26] border-2 border-white dark:border-white/15 overflow-hidden shadow-2xl relative transition-all duration-500">
-                    <img src="{{ asset('images/profile_jeffrey_adrian.jpg') }}" alt="Foto Profile" class="w-full h-full object-cover">
+                    <img src="{{ asset('images/profile_jeffrey_adrian.jpg') }}" alt="Jeffrey Adrian" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
@@ -435,7 +435,7 @@
                     <div style="width: 300px; height: 300px;" class="rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/10 shadow-xl">
                         <img
                             src="{{ asset('images/profile_jeffrey_adrian.jpg') }}"
-                            alt="About Me Photo"
+                            alt="Jeffrey Adrian"
                             class="w-full h-full object-cover object-center"
                         >
                     </div>
