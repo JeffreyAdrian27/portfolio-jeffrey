@@ -21,7 +21,7 @@ class PortfolioController extends Controller
                 'linkedin' => 'Jeffrey Adrian',
                 'linkedin_url' => 'https://www.linkedin.com/in/jeffrey-adrian-31693525a/',
                 'github' => 'JeffreyAdrian27',
-                'github_url' => 'https://github.com/JeffreyAdrian27',
+                'github_url' => 'https://github.com/JeffreyAdrian27?tab=repositories',
                 'location' => 'Surabaya, Jawa Timur, Indonesia'
             ],
             'skills' => [
