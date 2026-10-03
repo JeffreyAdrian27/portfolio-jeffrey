@@ -86,10 +86,16 @@
         {!! json_encode($schemaData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
     </script>
 
+    <!-- Google Fonts: Syncopate, Unbounded, Plus Jakarta Sans & Inter for modern uniform typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Unbounded:wght@700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
-        /* Smooth transitions */
+        /* Smooth transitions & consistent cross-device typography */
         body {
+            font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             transition: background-color 0.4s ease, color 0.4s ease;
         }
 
@@ -129,11 +135,32 @@
             }
         }
 
-        /* Home section responsive sizing (< 500px) */
+        /* Home section title styling (Syncopate extended bold font with blue cursor) */
         .home-title-name {
-            font-family: Comic Sans, Apple Chancery, Bradley Hand;
-            font-size: 60px;
-            line-height: 1.1;
+            font-family: 'Syncopate', 'Unbounded', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            line-height: 1.15;
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+        .home-title-cursor {
+            display: inline-block;
+            width: 3.5px;
+            height: 0.85em;
+            background-color: #2563eb;
+            margin-left: 0.35rem;
+            vertical-align: middle;
+            border-radius: 1px;
+            animation: titleCursorBlink 1.05s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+        @keyframes titleCursorBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
         .home-photo-frame {
             width: 380px;
@@ -141,8 +168,14 @@
         }
         @media (max-width: 500px) {
             .home-title-name {
-                font-size: 34px !important;
+                font-size: 23px !important;
+                font-size: clamp(21px, 5.8vw, 24px) !important;
                 line-height: 1.2 !important;
+                white-space: nowrap !important;
+            }
+            .home-title-cursor {
+                width: 3px !important;
+                margin-left: 0.2rem !important;
             }
             .home-photo-frame {
                 width: 220px !important;
@@ -151,7 +184,13 @@
         }
         @media (min-width: 501px) and (max-width: 768px) {
             .home-title-name {
-                font-size: 46px !important;
+                font-size: 28px !important;
+                line-height: 1.2 !important;
+                white-space: nowrap !important;
+            }
+            .home-title-cursor {
+                width: 3px !important;
+                margin-left: 0.25rem !important;
             }
             .home-photo-frame {
                 width: 290px !important;
@@ -377,7 +416,7 @@
             <div class="text-left">
                 <p class="text-xs font-semibold tracking-widest uppercase text-zinc-500 mb-4">HELLO, I'M</p>
                 <h1 class="home-title-name font-black mb-6 transition-colors duration-500 text-zinc-900 dark:text-white">
-                     {{ $profileData['name'] }}
+                    <span>{{ strtoupper($profileData['name']) }}</span>
                 </h1>
                 <p class="text-lg md:text-xl font-medium text-zinc-600 dark:text-zinc-400 mb-4">S1 Informatika</p>
                 <div class="text-lg md:text-xl font-medium text-zinc-600 dark:text-zinc-400 mb-4 flex items-center gap-2">
