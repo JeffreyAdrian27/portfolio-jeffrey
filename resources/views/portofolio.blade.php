@@ -15,6 +15,7 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, noimageindex, max-video-preview:-1">
     <meta name="googlebot-image" content="noindex, nofollow, noimageindex">
     <link rel="canonical" href="{{ url()->current() }}">
+    <meta name="google-site-verification" content="l-j3EvfTLEb7NXz_f-ZdZ1Q2gRyaD5WXlgkYAYDrD40" />
 
     <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website">
