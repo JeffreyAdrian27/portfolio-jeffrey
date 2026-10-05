@@ -1358,41 +1358,41 @@
     <div id="certificateModal" class="fixed inset-0 z-[110] hidden bg-black/85 flex items-center justify-center p-2 sm:p-5 opacity-0 transition-opacity duration-300 backdrop-blur-md">
         <div class="relative max-w-5xl w-full h-[90vh] bg-white dark:bg-[#1d1e26] border border-zinc-200 dark:border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col transform scale-95 transition-transform duration-300" id="certificateModalContent">
             <!-- Modal Header -->
-            <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-200 dark:border-white/10 bg-white dark:bg-[#1d1e26] shrink-0">
-                <div class="flex items-center gap-3 overflow-hidden pr-4">
-                    <div class="w-9 h-9 rounded-xl bg-teal-500/10 text-teal-500 flex items-center justify-center shrink-0">
-                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="flex items-center justify-between px-3.5 sm:px-6 py-3 sm:py-4 border-b border-zinc-200 dark:border-white/10 bg-white dark:bg-[#1d1e26] shrink-0 gap-2">
+                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-teal-500/10 text-teal-500 flex items-center justify-center shrink-0">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                         </svg>
                     </div>
-                    <div class="truncate">
-                        <h3 id="modalCertTitle" class="text-base sm:text-lg font-bold text-zinc-900 dark:text-white truncate">Certificate Title</h3>
-                        <p id="modalCertDate" class="text-xs font-mono text-zinc-400">Year</p>
+                    <div class="min-w-0 flex-1">
+                        <h3 id="modalCertTitle" class="text-xs sm:text-base font-bold text-zinc-900 dark:text-white truncate" title="Certificate Title">Certificate Title</h3>
+                        <p id="modalCertDate" class="text-[11px] sm:text-xs font-mono text-zinc-500 dark:text-zinc-400 whitespace-nowrap overflow-visible">Year</p>
                     </div>
                 </div>
                 
                 <!-- Zoom Controls & Close -->
-                <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
-                    <button type="button" onclick="zoomCert(0.25)" class="p-2 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10 transition-colors focus:outline-none cursor-pointer" title="Zoom In (+)">
+                <div class="flex items-center gap-1 sm:gap-2 shrink-0">
+                    <button type="button" onclick="zoomCert(0.25)" class="hidden md:inline-flex p-2 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10 transition-colors focus:outline-none cursor-pointer" title="Zoom In (+)">
                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                         </svg>
                     </button>
-                    <button type="button" onclick="zoomCert(-0.25)" class="p-2 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10 transition-colors focus:outline-none cursor-pointer" title="Zoom Out (-)">
+                    <button type="button" onclick="zoomCert(-0.25)" class="hidden md:inline-flex p-2 rounded-xl text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10 transition-colors focus:outline-none cursor-pointer" title="Zoom Out (-)">
                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
                         </svg>
                     </button>
-                    <button type="button" onclick="resetCertZoom()" id="certZoomBadge" class="px-2.5 py-1 rounded-xl text-xs font-mono font-semibold bg-zinc-100 dark:bg-white/5 text-zinc-600 dark:text-zinc-300 hover:text-teal-500 hover:bg-zinc-200 dark:hover:bg-white/10 transition-colors cursor-pointer" title="Reset Zoom">
+                    <button type="button" onclick="resetCertZoom()" id="certZoomBadge" class="px-2 sm:px-2.5 py-1 rounded-xl text-[11px] sm:text-xs font-mono font-semibold bg-zinc-100 dark:bg-white/5 text-zinc-600 dark:text-zinc-300 hover:text-teal-500 hover:bg-zinc-200 dark:hover:bg-white/10 transition-colors cursor-pointer" title="Reset Zoom">
                         100%
                     </button>
-                    <a id="modalCertExternalLink" href="#" target="_blank" class="p-2 rounded-xl text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10 transition-colors" title="Open full image in new tab">
-                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <a id="modalCertExternalLink" href="#" target="_blank" class="p-1.5 sm:p-2 rounded-xl text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10 transition-colors" title="Open full image in new tab">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                     </a>
-                    <button onclick="closeCertificateModal()" class="p-2 rounded-xl text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10 transition-colors focus:outline-none cursor-pointer" title="Close modal">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <button onclick="closeCertificateModal()" class="p-1.5 sm:p-2 rounded-xl text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10 transition-colors focus:outline-none cursor-pointer" title="Close modal">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
@@ -1709,6 +1709,7 @@
                 const cert = certificatesData[indexOrTitle];
                 if (!cert) return;
                 modalCertTitle.textContent = cert.title || 'Certificate';
+                modalCertTitle.title = cert.title || 'Certificate';
                 modalCertDate.textContent = cert.date ? `Issued: ${cert.date}` : (cert.issuer || '');
                 if (cert.images && Array.isArray(cert.images) && cert.images.length > 0) {
                     currentCertImages = cert.images;
@@ -1719,6 +1720,7 @@
                 }
             } else {
                 modalCertTitle.textContent = indexOrTitle;
+                modalCertTitle.title = indexOrTitle;
                 modalCertDate.textContent = date ? `Issued: ${date}` : '';
                 currentCertImages = [fileUrl];
             }
@@ -1807,6 +1809,84 @@
                 const delta = e.deltaY < 0 ? 0.2 : -0.2;
                 zoomCert(delta);
             }, { passive: false });
+
+            // Mobile Touch Events (Pinch-to-zoom, Pan, and Page Swipe)
+            let certInitialPinchDist = 0;
+            let certInitialScale = 1;
+            let certLastTapTime = 0;
+
+            certViewerViewport.addEventListener('touchstart', (e) => {
+                if (e.touches.length === 1) {
+                    const touch = e.touches[0];
+                    const currentTime = new Date().getTime();
+                    const tapLength = currentTime - certLastTapTime;
+
+                    // Double-tap to toggle zoom (100% <-> 175%)
+                    if (tapLength < 300 && tapLength > 50) {
+                        e.preventDefault();
+                        if (certScale > 1) {
+                            resetCertZoom();
+                        } else {
+                            zoomCert(0.75);
+                        }
+                        certLastTapTime = 0;
+                        return;
+                    }
+                    certLastTapTime = currentTime;
+
+                    isDraggingCert = true;
+                    dragStartX = touch.clientX;
+                    certStartX = touch.clientX - certTranslateX;
+                    certStartY = touch.clientY - certTranslateY;
+                } else if (e.touches.length === 2) {
+                    isDraggingCert = false;
+                    certInitialPinchDist = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY
+                    );
+                    certInitialScale = certScale;
+                }
+            }, { passive: false });
+
+            window.addEventListener('touchmove', (e) => {
+                if (e.touches.length === 1 && isDraggingCert) {
+                    const touch = e.touches[0];
+                    if (certScale > 1) {
+                        certTranslateX = touch.clientX - certStartX;
+                        certTranslateY = touch.clientY - certStartY;
+                        applyCertTransform(false);
+                        e.preventDefault();
+                    }
+                } else if (e.touches.length === 2 && certInitialPinchDist > 0) {
+                    const currentDist = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY
+                    );
+                    const scaleDiff = currentDist / certInitialPinchDist;
+                    const newScale = Math.min(Math.max(certInitialScale * scaleDiff, 0.75), 3.5);
+                    certScale = Math.round(newScale * 100) / 100;
+                    applyCertTransform(false);
+                    e.preventDefault();
+                }
+            }, { passive: false });
+
+            window.addEventListener('touchend', (e) => {
+                if (isDraggingCert && e.changedTouches.length === 1) {
+                    const touch = e.changedTouches[0];
+                    isDraggingCert = false;
+                    if (certScale <= 1 && currentCertImages.length > 1) {
+                        const dragDist = touch.clientX - dragStartX;
+                        if (dragDist > 50) {
+                            changeCertPage(-1); // Swipe right -> prev page
+                        } else if (dragDist < -50) {
+                            changeCertPage(1);  // Swipe left -> next page
+                        }
+                    }
+                }
+                if (e.touches.length < 2) {
+                    certInitialPinchDist = 0;
+                }
+            });
         }
 
         // Keyboard arrow navigation for multi-page certificates
