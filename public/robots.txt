@@ -87,4 +87,4 @@ Disallow: /
 Crawl-delay: 2
 
 # Sitemap Reference for SEO
-Sitemap: /sitemap.xml
+https://portfolio-jeffrey.onrender.com/sitemap.xml
