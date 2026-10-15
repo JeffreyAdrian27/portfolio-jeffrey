@@ -105,6 +105,22 @@ class PortfolioController extends Controller
                     'tags' => ['Antigravity', 'Figma', 'Stitch', 'AI Agents'],
                     'items' => 'Antigravity, Figma, Stitch, Agentic Workflows, AI Engineering'
                 ],
+                [
+                    'number' => '11',
+                    'title' => 'Vue.js',
+                    'category' => 'Frontend Framework',
+                    'description' => 'Progressive JavaScript framework for building reactive, fast, and scalable single-page web applications.',
+                    'tags' => ['Vue 3', 'Composition API', 'Vite', 'Pinia'],
+                    'items' => 'Vue.js 3, Single Page Applications, Vite, State Management'
+                ],
+                [
+                    'number' => '12',
+                    'title' => 'PHP Native',
+                    'category' => 'Backend & Core Web',
+                    'description' => 'Core server-side web development with procedural & object-oriented programming, session handling, and database queries.',
+                    'tags' => ['PHP 8.x', 'OOP', 'PDO & MySQLi', 'Sessions'],
+                    'items' => 'PHP Native, Procedural & OOP, Session Auth, Custom API Endpoints'
+                ],
             ],
             'education' => [
                 [

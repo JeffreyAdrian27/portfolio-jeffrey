@@ -60,7 +60,9 @@
                     ],
                     'knowsAbout' => [
                         'React Native',
+                        'Vue.js',
                         'Laravel',
+                        'PHP Native',
                         'Node.js',
                         'Python Data Analytics',
                         'Tailwind CSS',
@@ -560,7 +562,96 @@
                         <div class="skill-card flex flex-col justify-between" data-index="{{ $index }}">
                             <!-- Top Area: Number (Kanan Atas) & Title & Description -->
                             <div>
-                                <div class="flex items-center justify-end mb-2">
+                                <div class="flex items-center justify-between mb-3">
+                                    <!-- Skill Icon Badge -->
+                                    <div class="w-9 h-9 rounded-xl bg-teal-50/80 dark:bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 flex items-center justify-center shadow-sm shrink-0">
+                                        @switch($skill['title'])
+                                            @case('React Native')
+                                                <svg class="w-5 h-5 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                                    <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(0 12 12)"/>
+                                                    <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/>
+                                                    <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>
+                                                    <circle cx="12" cy="12" r="1.8" fill="currentColor"/>
+                                                </svg>
+                                                @break
+
+                                            @case('Vue.js')
+                                                <svg class="w-5 h-5" viewBox="0 0 261 226" fill="none">
+                                                    <path d="M161.096.001l-30.625 53.043L99.846.001H0l130.471 226L260.942.001z" fill="#42b883"/>
+                                                    <path d="M161.096.001l-30.625 53.043L99.846.001H52.246l78.225 135.49L208.696.001z" fill="#35495e" class="dark:fill-slate-200"/>
+                                                </svg>
+                                                @break
+
+                                            @case('Laravel')
+                                                <svg class="w-5 h-5 text-[#F05340]" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M8.5 2.5l7 4v3.5l-3 1.7-4-2.3V5.8L5 7.8v7.5l7 4 7-4V8.7l2-1.2v8.8l-9 5.2-9-5.2V6.5l5.5-3.2zm6 7.5l2-1.2 2 1.2-2 1.2-2-1.2zm-2.5 1.4l2-1.2v2.4l-2 1.2v-2.4zm-2.5-1.4l2-1.2 2 1.2-2 1.2-2-1.2z"/>
+                                                </svg>
+                                                @break
+
+                                            @case('PHP Native')
+                                                <svg class="w-5 h-5 text-[#777BB4]" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-4.144 13.88H6.182l1.378-6.195h2.47c1.472 0 2.478.784 2.227 2.05-.28 1.41-1.398 2.05-2.73 2.05H8.384l-.528 2.095zm3.676 0l1.378-6.195h1.674l-.53 2.378h1.83l.53-2.378h1.674l-1.378 6.195h-1.674l.564-2.532h-1.83l-.564 2.532h-1.374zm6.666 0h-1.674l1.378-6.195h2.47c1.472 0 2.478.784 2.227 2.05-.28 1.41-1.398 2.05-2.73 2.05h-1.144l-.525 2.095zm-9.066-3.34h1.127c.725 0 1.258-.293 1.403-.984.148-.707-.22-1.01-.944-1.01H9.86l-.428 1.994zm6.666 0h1.127c.725 0 1.258-.293 1.403-.984.148-.707-.22-1.01-.944-1.01h-1.155l-.431 1.994z"/>
+                                                </svg>
+                                                @break
+
+                                            @case('Docker')
+                                                <svg class="w-5 h-5 text-[#2496ED]" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.186.185.186zm0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186zm-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186zm-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186zm5.893 2.715h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185zm-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185zm-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186h-2.12a.186.186 0 00-.185.185v1.888c0 .102.084.185.186.185zm-2.928 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186H2.208a.186.186 0 00-.186.185v1.888c0 .102.084.185.186.185zM23.953 12.01c-.13-.093-1.32-.822-3.79-.822-.614 0-1.25.05-1.892.152-.416-2.022-2.197-3.542-4.32-3.542-.132 0-.263.007-.394.02V6.289c0-.442-.36-.8-.802-.8H2.208c-.442 0-.802.358-.802.8v4.86c-.958.468-1.406 1.34-1.406 2.052 0 3.86 3.91 6.8 9.94 6.8 5.762 0 9.873-2.617 10.37-6.223.753.078 1.55-.008 2.274-.467.43-.274.67-.687.67-1.162 0-.395-.145-.733-.301-.84z"/>
+                                                </svg>
+                                                @break
+
+                                            @case('Tailwind CSS')
+                                                <svg class="w-5 h-5 text-[#38BDF8]" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"/>
+                                                </svg>
+                                                @break
+
+                                            @case('Node.js')
+                                                <svg class="w-5 h-5 text-[#5FA04E]" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2l9 5.2v10.4L12 23l-9-5.4V7.2L12 2zm0 2.3L4.8 8.5v7.2L12 20.1l7.2-4.4V8.5L12 4.3z"/>
+                                                </svg>
+                                                @break
+
+                                            @case('MySQL & Firebase')
+                                                <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                                                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                                                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                                                </svg>
+                                                @break
+
+                                            @case('API Integration')
+                                                <svg class="w-5 h-5 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                                </svg>
+                                                @break
+
+                                            @case('Git & Dev Tools')
+                                                <svg class="w-5 h-5 text-[#F05032]" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M18.8 9.2a3 3 0 00-2.3 1.1l-3.3-1.9a3 3 0 00.3-1.4 3 3 0 10-3.5 3v4.2a3 3 0 102 0v-4l3.1 1.8a3 3 0 103.7-2.8zM7 6a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm3 12a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm8.5-6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/>
+                                                </svg>
+                                                @break
+
+                                            @case('Data Analyst (Python)')
+                                                <svg class="w-5 h-5 text-[#3776AB]" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M11.9 2c-4.4 0-4.1 1.9-4.1 1.9l.01 2h4.2v.6H5.8S2 6.1 2 10.5c0 4.4 3.3 4.2 3.3 4.2h2v-2.8s-.1-3.3 3.3-3.3h5.7s3.2.1 3.2-3.1c0-3.3-3.6-3.5-3.6-3.5H11.9zm-2.3 1.3a1 1 0 110 2 1 1 0 010-2zm2.5 18.7c4.4 0 4.1-1.9 4.1-1.9l-.01-2h-4.2v-.6h6.2s3.8.4 3.8-4c0-4.4-3.3-4.2-3.3-4.2h-2v2.8s.1 3.3-3.3 3.3H9.4s-3.2-.1-3.2 3.1c0 3.3 3.6 3.5 3.6 3.5h5.7zm2.3-1.3a1 1 0 110-2 1 1 0 010 2z"/>
+                                                </svg>
+                                                @break
+
+                                            @case('Agentic AI Workflows')
+                                                <svg class="w-5 h-5 text-teal-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                                </svg>
+                                                @break
+
+                                            @default
+                                                <svg class="w-5 h-5 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                                                </svg>
+                                        @endswitch
+                                    </div>
+
+                                    <!-- Number di Kanan Atas -->
                                     <span class="text-teal-600 dark:text-teal-400 font-mono font-bold text-xs tracking-widest px-2.5 py-0.5 rounded bg-teal-50 dark:bg-teal-500/10 border border-teal-500/30">
                                         {{ $skill['number'] ?? sprintf('%02d', $index + 1) }}
                                     </span>

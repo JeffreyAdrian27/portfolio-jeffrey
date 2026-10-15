@@ -113,6 +113,15 @@
      - **Pinch-to-zoom:** Cubit 2 jari untuk zoom dinamis (0.75x s/d 3.5x).
      - **Swipe finger:** Geser 1 jari ke kiri/kanan untuk berpindah halaman pada sertifikat multi-page.
 
+### Permintaan 17: Penambahan Skill Vue.js & PHP Native Beserta Ikon
+- **Kebutuhan:** Menambahkan skill **Vue.js** dan **PHP Native** ke dalam daftar section Skills beserta icon masing-masing.
+- **Implementasi:**
+  - Ditambahkan ke array `$profileData['skills']` di `PortfolioController.php`:
+    - **11. Vue.js:** Kategori *Frontend Framework*, deskripsi reactive SPA, tags `['Vue 3', 'Composition API', 'Vite', 'Pinia']`.
+    - **12. PHP Native:** Kategori *Backend & Core Web*, deskripsi procedural/OOP & database connectivity, tags `['PHP 8.x', 'OOP', 'PDO & MySQLi', 'Sessions']`.
+  - Ditambahkan ke Schema.org JSON-LD `knowsAbout` di `portofolio.blade.php`.
+  - Di `portofolio.blade.php`, setiap kartu skill sekarang dilengkapi badge ikon SVG resmi berkualitas tinggi di pojok kiri atas (Vue.js emerald V-logo, PHP Native official emblem, React Native, Laravel, Docker, Tailwind, Node.js, MySQL, API, Git, Python, dan AI).
+
 ---
 
 ## 3. Struktur Konfigurasi CSS & Asset Build
