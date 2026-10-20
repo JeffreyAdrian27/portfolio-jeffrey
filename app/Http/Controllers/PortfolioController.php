@@ -227,11 +227,38 @@ class PortfolioController extends Controller
                 ],
                 [
                     'title' => 'Website for Kopi Harapan',
-                    'category' => 'Web App',
+                    'category' => 'Web App using AI Assisstant Agent',
                     'description' => 'A modern and aesthetic coffee shop profile website developed for Kopi Harapan to showcase curated signature coffee blends, cafe ambiance, interactive menu catalogs, customer testimonials, and direct ordering / reservation links.',
                     'link' => '#',
                     'tags' => ['HTML', 'Tailwind CSS', 'JavaScript'],
                     'images' => ['project4/kopiharapan1.png', 'project4/kopiharapan2.png', 'project4/kopiharapan3.png', 'project4/kopiharapan4.png']
+                ],
+                [
+                    'title' => 'Website for Hosting & Client Billing Reminder',
+                    'category' => 'Web App using AI Assisstant Agent',
+                    'description' => 'A dedicated client hosting management and automated billing reminder platform developed to monitor domain & hosting subscription due dates, automatically dispatching email notifications to both clients and administrators to ensure timely invoice settlements and avoid service disruptions.',
+                    'link' => '#',
+                    'tags' => ['Php native', 'MySQL', 'Automated Email', 'Cron Job'],
+                    'images' => [
+                        'project5/mangerhosting1.png',
+                        'project5/managerhosting2.png',
+                        'project5/managerhosting3.png',
+                        'project5/managerhosting4.png'
+                    ]
+                ],
+                [
+                    'title' => 'Website for Toko Citra (Electrical Store)',
+                    'category' => 'Web App using AI Assisstant Agent',
+                    'description' => 'A comprehensive retail point-of-sale (POS) and inventory management web application developed for an electrical store to manage product catalog CRUD operations, record supplier purchases, process customer sales transactions, and generate automated real-time profit and loss (P&L) financial reports.',
+                    'link' => '#',
+                    'tags' => ['Vue.js 3', 'Node.js', 'MySQL'],
+                    'images' => [
+                        'project6/tokocitra1.png',
+                        'project6/tokocitra2.png',
+                        'project6/tokocitra3.png',
+                        'project6/tokocitra4.png',
+                        'project6/tokocitra5.png'
+                    ]
                 ]
             ]
         ];

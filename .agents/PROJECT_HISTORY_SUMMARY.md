@@ -120,7 +120,21 @@
     - **11. Vue.js:** Kategori *Frontend Framework*, deskripsi reactive SPA, tags `['Vue 3', 'Composition API', 'Vite', 'Pinia']`.
     - **12. PHP Native:** Kategori *Backend & Core Web*, deskripsi procedural/OOP & database connectivity, tags `['PHP 8.x', 'OOP', 'PDO & MySQLi', 'Sessions']`.
   - Ditambahkan ke Schema.org JSON-LD `knowsAbout` di `portofolio.blade.php`.
-  - Di `portofolio.blade.php`, setiap kartu skill sekarang dilengkapi badge ikon SVG resmi berkualitas tinggi di pojok kiri atas (Vue.js emerald V-logo, PHP Native official emblem, React Native, Laravel, Docker, Tailwind, Node.js, MySQL, API, Git, Python, dan AI).
+### Permintaan 18: Penambahan Proyek ke-5 dan ke-6 ke Section Projects
+- **Kebutuhan:** Menambahkan 2 proyek baru dari folder `public/images/project5` dan `public/images/project6`:
+  - **Project 5:** Website pengingat jatuh tempo pembayaran hosting klien serta pengiriman email reminder otomatis ke pemilik/admin.
+  - **Project 6:** Website toko listrik (Toko Citra) untuk pengelolaan data barang (CRUD), transaksi pembelian supplier, penjualan pelanggan (POS), dan laporan laba rugi (P&L).
+- **Implementasi:**
+  - Ditambahkan ke array `$profileData['projects']` di `PortfolioController.php`:
+    - **Website for Hosting & Client Billing Reminder:**
+      - Kategori: `Web App`
+      - Images: `project5/mangerhosting1.png`, `managerhosting2.png`, `managerhosting3.png`, `managerhosting4.png`
+      - Tags: `['Laravel', 'MySQL', 'Automated Email', 'Cron Job', 'Tailwind CSS']`
+    - **Website for Toko Citra (Electrical Store):**
+      - Kategori: `Web App`
+      - Images: `project6/tokocitra1.png`, `tokocitra2.png`, `tokocitra3.png`, `tokocitra4.png`, `tokocitra5.png`
+      - Tags: `['Laravel', 'MySQL', 'Inventory & POS', 'P&L Report', 'Bootstrap']`
+  - Carousel slider, multi-page image badge, dan popup modal detail di `portofolio.blade.php` otomatis menyesuaikan data 6 proyek.
 
 ---
 
