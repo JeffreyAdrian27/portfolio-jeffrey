@@ -136,6 +136,16 @@
       - Tags: `['Laravel', 'MySQL', 'Inventory & POS', 'P&L Report', 'Bootstrap']`
   - Carousel slider, multi-page image badge, dan popup modal detail di `portofolio.blade.php` otomatis menyesuaikan data 6 proyek.
 
+### Permintaan 19: Penanganan Security Advisory Render (PHP2Shell & eMudhra Certificate)
+- **Konteks:** Render mengirimkan security notice terkait 2 kerentanan global:
+  1. **PHP2Shell (Critical RCE di PHP runtime):** Memerlukan update PHP ke versi patch terbaru.
+  2. **eMudhra Certificate Compromise:** Memerlukan pembaruan store sertifikat OS (`ca-certificates`) agar sertifikat yang terkompromi tidak dipercaya.
+- **Implementasi:**
+  - File `Dockerfile` diperbarui:
+    - Base image di-upgrade dari `php:8.2-apache` ke `php:8.3-apache` (versi terbaru dengan patch security).
+    - Menambahkan `apt-get upgrade -y` dan instalasi `ca-certificates` serta eksekusi `update-ca-certificates`.
+  - Aplikasi siap untuk di-deploy ulang (*re-deploy*) di Render agar image baru terpasang aman.
+
 ---
 
 ## 3. Struktur Konfigurasi CSS & Asset Build
